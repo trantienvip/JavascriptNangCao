@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai1 - lab3</title>
+</head>
+<body>
+    <script>
+        var sv = {
+            id: '1',
+            fullname: 'Trần Tiến',
+            email: 'tientph12974@fpt.edu.vn',
+            avatar: 'https://lh3.googleusercontent.com/a-/AOh14GiO9gJHF6S0uOfskT1RtrbABe2qPSYpb7XgcHCCPQ=s75-c',
+            address: 'Quảng Ninh',
+            study_major: 'Thiết kế Website',
+            avgScore: 9.9,
+            getAvgScore(){
+                console.log(`${this.avgScore} Điểm trung bình của bạn`);
+            },
+            setAvgScore(point){
+                console.log(`Điểm TB ban đầu ${this.avgScore} - Sau khi đã thay đổi: ${this.avgScore = point}`);
+            },
+            changeAddress(address){
+                console.log(`Địa chỉ ban đầu ${this.address} - Sau khi đã thay đổi: ${this.address = address}`);
+            }
+        }
+    </script>
+</body>
+</html>

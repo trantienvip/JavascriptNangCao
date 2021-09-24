@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai4 - lab2</title>
+</head>
+
+<body>
+    <div class="container">
+        Email: <input type="text" id="stringID">
+        <button type="submit">Check</button>
+        <h1 class="ketqua"></h1>
+    </div>
+
+    <script>
+        var stringIDD = document.querySelector('#stringID');
+        var button = document.querySelector('button');
+        var ketqua = document.querySelector('.ketqua');
+
+        button.addEventListener('click', () => {
+            var regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            ketqua.innerHTML = regex.test(stringIDD.value);
+        });
+    </script>
+</body>
+
+</html>

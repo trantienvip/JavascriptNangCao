@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            overflow: hidden;
+        }
+
+        aside {
+            position: absolute;
+            width: 200px;
+            border: 1px solid #000;
+            right: -200px;
+            top: -200px;
+            transition: .5s all ease-in;
+        }
+        aside.active{
+            top: 30px;
+            right: 0;
+        }
+
+        .btn {
+            position: relative;
+            top: -200px;
+            left: 0;
+            z-index: 1;
+        }
+
+        .content {
+            border: 1px solid #000;
+            width: 100%;
+            transition: .5s all ease;
+        }
+        .content.active{
+            width: 70%;
+        }
+
+        @media (max-width: 768px) {
+            .btn {
+                top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <button class="btn">Nav</button>
+    </header>
+    <aside>
+        <ul class="menu">
+            <li><a href="">menu</a></li>
+            <li><a href="">menu</a></li>
+            <li><a href="">menu</a></li>
+            <li><a href="">menu</a></li>
+        </ul>
+    </aside>
+    <div class="content">
+        Content
+    </div>
+
+    <button id="btnshow">show</button>
+    <ul id="show">
+    </ul>
+    <script>
+        document.querySelector('.btn').addEventListener('click', ()=>{
+            document.querySelector('aside').classList.toggle('active');
+            document.querySelector('.content').classList.toggle('active');
+        });
+
+        const cat = {
+            ten: 'Meo Meo',
+            tuoi: 24,
+            tinhtrang: false
+        }
+
+        document.querySelector('#btnshow').addEventListener('click', ()=>{
+            const catcat = document.querySelector('#show');
+            catcat.innerHTML = 
+            `
+            <li>Tên: ${cat.ten}</li>
+            <li>Tuổi: ${cat.tuoi}</li>
+            <li>Tình Trạng: ${cat.tinhtrang ? "Đã kết hôn" : "Chưa Kết hôn"}</li>
+            `;
+        })
+    </script>
+</body>
+
+</html>

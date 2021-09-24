@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class PeopleProto {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            showInfo () {
+                return "Chau ten la " + this.name + " Chau nam nay " + this.age;
+            }
+        }
+
+        class People extends PeopleProto {
+            constructor(name, age, schools) {
+                super(name, age);
+                this.schools = schools;
+            }
+
+            showInfoAll() {
+                return this.showInfo() + " Chau hoc truong " + this.schools;
+            }
+        }
+        s1 = new People('Tien', 23, 'FPT Poly');
+        console.log(s1.showInfoAll());
+
+    </script>
+</body>
+</html>

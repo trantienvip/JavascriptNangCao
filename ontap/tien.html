@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <title>OOP</title>
+  </head>
+  <body>
+    <script>
+      class VanDongVien {
+          constructor () {
+              this.ma_van_dong_vien = "NTAV000",
+              this.ho_va_ten = "Nguyen thi Anh Vien",
+              this.ngay_sinh = "12/04/1998",
+              this.giai_thuong = ["Huy Chương vàng SEAGAME", "Huy Chương Bạc SEAGAME"],
+              this.kiemTraDieuKien = function (giaiDauTiepTheo) {
+                const yearNow = new Date(moment(giaiDauTiepTheo, "DD-MM-YYYY")).getFullYear();
+                const current =  new Date(this.ngay_sinh).getFullYear(); 
+                return yearNow-current > 18;
+              };
+              this.danhSachGiaiThuong = function (){
+                var e = '';
+                this.giai_thuong.forEach(element => {
+                    e += `<li> ${element} </li>`;
+                });
+                return e;
+              };
+
+              this.setSachGiaiThuong = function (dataP){
+                 this.giai_thuong.push(dataP);
+                 return this.giai_thuong;
+              };
+              
+          }
+      }
+      
+      var tien = new VanDongVien();
+      console.log(tien.kiemTraDieuKien("12/04/2021"));
+      tien.setSachGiaiThuong('aaaa');
+      document.write(tien.danhSachGiaiThuong());
+    </script>
+  </body>
+</html>

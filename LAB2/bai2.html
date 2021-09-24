@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai2 - lab2</title>
+</head>
+<body>
+    <div class="container">
+            String: <input type="text" id="stringID">
+            Number: <input type="number" id="numberID">
+            <button type="submit">Convert</button>
+        <h1 class="ketqua"></h1>
+    </div>
+
+    <script>
+        var stringID = document.querySelector('#stringID');
+        var numberID = document.querySelector('#numberID');
+        var button = document.querySelector('button');
+        button.addEventListener('click', () =>{
+            var ketqua = document.querySelector('.ketqua');
+            ketqua.innerHTML = stringID.value.slice(0,numberID.value);
+            if (stringID.value.length <= numberID.value) {
+                ketqua.innerHTML = `${stringID.value.slice(0,numberID.value)}.`;
+            }else{
+                ketqua.innerHTML = `${stringID.value.slice(0,numberID.value)}...`;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // reducer(); Object
+        const arr = [
+            { id: 1, name: "Tien", price: 10 },
+            { id: 2, name: "Dinh", price: 15 },
+            { id: 3, name: "Dat", price: 5 },
+        ];
+        // function thường
+        const result = arr.reduce(function (total, {price}) {
+            return total + price;
+        },0);
+
+        // Arrow function
+        const result = arr.reduce((total, {price})=> (total + price),0);
+        console.log(result);
+
+
+    </script>
+</body>
+
+</html>

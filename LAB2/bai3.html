@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai3 - lab2</title>
+</head>
+<body>
+    <div class="container">
+            String: <input type="text" id="stringID">
+            <button type="submit">Convert</button>
+        <h1 class="ketqua"></h1>
+    </div>
+
+    <script>
+        var stringID = document.querySelector('#stringID');
+        var button = document.querySelector('button');
+        button.addEventListener('click', () =>{
+            var ketqua = document.querySelector('.ketqua');
+            var str = stringID.value;
+            // ES5
+            // var camalize = function camalize(str) {
+            //     return str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g,
+            //     function(m, chr){
+            //         return chr.toUpperCase();
+            //     });
+            // }
+            // ES6
+            var camalize = (str) => str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+            ketqua.innerHTML = camalize(str);
+        });
+    </script>
+</body>
+</html>

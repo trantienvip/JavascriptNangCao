@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    li{
+        list-style: none;
+    }
+    label{
+        display: block;
+    }
+</style>
+<body>
+    <form action="">
+        <label for="date">
+            <span>Date</span>
+            <input type="text" id="date">
+        </label>
+        <label for="Month">
+            <span>Month</span>
+            <input type="text" id="Month">
+        </label>
+        <label for="Yeah">
+            <span>Yeah</span>
+            <input type="text" id="Yeah">
+        </label>
+        <button type="submit">Convert</button>
+    </form>
+
+    <div class="hienthi"></div>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script>
+        var form = document.querySelector('form');
+        var hienthi = document.querySelector('.hienthi');
+
+        var date = document.querySelector('#date');
+        var Month = document.querySelector('#Month');
+        var Yeah = document.querySelector('#Yeah');
+        
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            var datedd = `${Yeah.value}/${Month.value}/${date.value}`;
+            var thoigian = moment(datedd, "YYYY/MM/DD");
+
+            hienthi.innerHTML = `
+            <li>${thoigian.format('dddd')}</li>
+            `;
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai3 - lab3</title>
+</head>
+
+<body>
+    <script>
+        class Student {
+            constructor() {
+                this.name = 'Trần Tiến',
+                    this.age = 'tientph12974@fpt.edu.vn',
+                    this.address = 'Quảng Ninh',
+                    this.phone = 12345678,
+                    this.birthday = "12 / 04 / 1998",
+                    this.subjects = {
+                        name: "JS Nâng Cao",
+                        teacher: "Dat",
+                        point: 10,
+                        year: 2021,
+                    }
+            };
+        };
+
+        class StudentPoly extends Student {
+            getAvgScore() {
+                console.log(`Điểm của bạn là: ${this.subjects.point}`);
+            };
+            setAvgScore(point) {
+                console.log(`Điểm ban đầu ${this.subjects.point} - Sau khi đã thay đổi: ${this.subjects.point = point}`);
+            };
+            changeAddress(address) {
+                console.log(`Địa chỉ ban đầu: ${this.address} - Sau khi đã thay đổi: ${this.address = address}`);
+            }
+        }
+
+        var tien = new StudentPoly();
+        tien.getAvgScore();
+        tien.setAvgScore(11);
+        tien.changeAddress('Hà Nội');
+    </script>
+</body>
+
+</html>
