@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 3 - Lab4</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <input type="text" id="listStudent" placeholder="Nhập vào danh sách sinh viên">
+    <button>Enter</button>
+    <ul id="show"></ul>
+    <script>
+        var data = [];
+        const $ = document.querySelector.bind(document);
+        var listStudent = $('#listStudent');
+        var show = $('#show');
+
+
+        $('button').addEventListener('click', function () {
+            function sapXep(data){
+                data.sort(function(a,b){
+                    return a.name.localeCompare(b.name);
+                });
+            }
+            function addUser (name, callback){
+                data.push({name: name});
+                callback(data);
+            }
+            addUser(listStudent.value, sapXep);
+            show.innerHTML = data.map(e => `<li>${e.name}</li>`).join(' ');
+        });
+
+    </script>
+</body>
+
+</html>

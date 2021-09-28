@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai4 - lab3</title>
+    <style>
+        ul,li{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="">1st Person Name</label>
+        <input type="text" id="name1">
+    </div>
+    <div>
+        <label for="">1st Person Age</label>
+        <input type="text" id="age1">
+    </div>
+    <div>
+        <label for="">1st Person Address</label>
+        <input type="text" id="address1">
+    </div>
+
+    <div>
+        <label for="">2st Person Name</label>
+        <input type="text" id="name2">
+    </div>
+    <div>
+        <label for="">2st Person Age</label>
+        <input type="text" id="age2">
+    </div>
+    <div>
+        <label for="">2st Person Address</label>
+        <input type="text" id="address2">
+    </div>
+
+    <input id="show" type="button" value="ShowProfile">
+
+    <div id="result"></div>
+
+    <script>
+        var Person = {
+            name: '',
+            age: 0,
+            address: '',
+
+            showProfile(){
+                return `-Tôi tên là: ${this.name} <br> -Tôi ${this.age} tuổi <br> -Tôi ở ${this.address}`;
+            }
+        };
+
+        var FirstPerson = {
+            __proto__: Person
+        }
+
+        var SecondPerson = {
+            __proto__: Person
+        }
+        const $ = document.querySelector.bind(document);
+        var btn = $('#show');
+        var result = $('#result');
+
+        btn.addEventListener('click', function() {
+            if (($('#name1').value) === '' || ($('#name2').value) === '' || ($('#age1').value) === '' || ($('#age2').value) === '' || ($('#address1').value) === '' || ($('#address2').value) === '') {
+                alert('Yêu cầu nhập đầy đủ thông tin');
+            }else {
+                FirstPerson.name = $('#name1').value;
+                FirstPerson.age = $('#age1').value;
+                FirstPerson.address = $('#address1').value;
+
+                SecondPerson.name = $('#name2').value;
+                SecondPerson.age = $('#age2').value;
+                SecondPerson.address = $('#address2').value;
+
+                result.innerHTML = `
+                    ${FirstPerson.showProfile()} <br> <br>
+                    ${SecondPerson.showProfile()} <br>
+                `;
+            }
+        })
+    </script>
+</body>
+</html>

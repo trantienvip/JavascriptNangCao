@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 1 - Lab4</title>
+</head>
+<body>
+    <input type="text" id="canNang" placeholder="Cân nặng">
+    <input type="text" id="chieuCao" placeholder="Chiều cao">
+    <button>Enter</button>
+    <ul>
+        <h3>Chỉ số BMI của bạn là:</h3>
+        <li id="hienthi"></li>
+    </ul>
+
+    <script>
+        const $ = document.querySelector.bind(document);
+        function showDisplay(BMI){
+            $('#hienthi').innerHTML = BMI;
+        }
+
+        function tinhChiSo(canNang, chieuCao, Callback){
+            let BMI = Number(canNang / (chieuCao*2));
+            Callback(BMI);
+        }
+
+        $('button').addEventListener('click', ()=>{
+            var canNang = $('#canNang').value;
+            var chieuCao = $('#chieuCao').value;
+            tinhChiSo(canNang, chieuCao, showDisplay);
+        });
+
+    </script>
+</body>
+</html>
